@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,32 @@ namespace WinFormsPractice
         private void topLabel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void signIN_Click(object sender, EventArgs e)
+        {
+            string userLogin = loginField.Text;
+            string userPass = passField.Text;
+
+            DataBase dataBase = new DataBase();
+            DataTable dataTable = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @userLogin AND `pass` = @userPass", dataBase.GetConnection());
+            command.Parameters.Add("@userLogin", MySqlDbType.VarChar).Value = userLogin;
+            command.Parameters.Add("@userPass", MySqlDbType.VarChar).Value = userPass;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(dataTable);
+
+            if(dataTable.Rows.Count > 0)
+            {
+                MessageBox.Show("Yes");
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
         }
     }
 }

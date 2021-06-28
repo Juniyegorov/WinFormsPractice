@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsPractice
 {
-    partial class LoginForm
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace WinFormsPractice
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.signIN = new System.Windows.Forms.Button();
+            this.register = new System.Windows.Forms.Button();
             this.passField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.loginField = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@ namespace WinFormsPractice
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(194)))), ((int)(((byte)(60)))));
-            this.mainPanel.Controls.Add(this.signIN);
+            this.mainPanel.Controls.Add(this.register);
             this.mainPanel.Controls.Add(this.passField);
             this.mainPanel.Controls.Add(this.pictureBox2);
             this.mainPanel.Controls.Add(this.loginField);
@@ -57,26 +57,25 @@ namespace WinFormsPractice
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(401, 409);
-            this.mainPanel.TabIndex = 0;
+            this.mainPanel.TabIndex = 1;
             // 
-            // signIN
+            // register
             // 
-            this.signIN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(153)))), ((int)(((byte)(5)))));
-            this.signIN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signIN.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(150)))));
-            this.signIN.FlatAppearance.BorderSize = 0;
-            this.signIN.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(87)))), ((int)(((byte)(21)))));
-            this.signIN.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(214)))), ((int)(((byte)(7)))));
-            this.signIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signIN.Font = new System.Drawing.Font("Gabriola", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.signIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(150)))));
-            this.signIN.Location = new System.Drawing.Point(188, 292);
-            this.signIN.Name = "signIN";
-            this.signIN.Size = new System.Drawing.Size(79, 47);
-            this.signIN.TabIndex = 5;
-            this.signIN.Text = "Login";
-            this.signIN.UseVisualStyleBackColor = false;
-            this.signIN.Click += new System.EventHandler(this.signIN_Click);
+            this.register.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(153)))), ((int)(((byte)(5)))));
+            this.register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.register.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(150)))));
+            this.register.FlatAppearance.BorderSize = 0;
+            this.register.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(87)))), ((int)(((byte)(21)))));
+            this.register.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(214)))), ((int)(((byte)(7)))));
+            this.register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.register.Font = new System.Drawing.Font("Gabriola", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(25)))), ((int)(((byte)(150)))));
+            this.register.Location = new System.Drawing.Point(188, 292);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(79, 47);
+            this.register.TabIndex = 5;
+            this.register.Text = "Register";
+            this.register.UseVisualStyleBackColor = false;
             // 
             // passField
             // 
@@ -115,7 +114,6 @@ namespace WinFormsPractice
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -140,8 +138,6 @@ namespace WinFormsPractice
             this.closeButton.TabIndex = 1;
             this.closeButton.Text = "X";
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
             // topLabel
             // 
@@ -152,20 +148,20 @@ namespace WinFormsPractice
             this.topLabel.Name = "topLabel";
             this.topLabel.Size = new System.Drawing.Size(401, 100);
             this.topLabel.TabIndex = 0;
-            this.topLabel.Text = "Authorization";
+            this.topLabel.Text = "Registration";
             this.topLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.topLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.topLabel_MouseDown);
             this.topLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topLabel_MouseMove);
             // 
-            // LoginForm
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 409);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Name = "RegisterForm";
+            this.Text = "RegisterForm";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -179,13 +175,13 @@ namespace WinFormsPractice
         #endregion
 
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label closeButton;
-        private System.Windows.Forms.Label topLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button register;
         private System.Windows.Forms.TextBox passField;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox loginField;
-        private System.Windows.Forms.Button signIN;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label closeButton;
+        private System.Windows.Forms.Label topLabel;
     }
 }
