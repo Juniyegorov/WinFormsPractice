@@ -29,7 +29,9 @@ namespace WinFormsPractice
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.registerLabel = new System.Windows.Forms.Label();
             this.signIN = new System.Windows.Forms.Button();
             this.passField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,6 +49,7 @@ namespace WinFormsPractice
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(194)))), ((int)(((byte)(60)))));
+            this.mainPanel.Controls.Add(this.registerLabel);
             this.mainPanel.Controls.Add(this.signIN);
             this.mainPanel.Controls.Add(this.passField);
             this.mainPanel.Controls.Add(this.pictureBox2);
@@ -58,6 +61,18 @@ namespace WinFormsPractice
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(401, 409);
             this.mainPanel.TabIndex = 0;
+            // 
+            // registerLabel
+            // 
+            this.registerLabel.AutoSize = true;
+            this.registerLabel.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.registerLabel.ForeColor = System.Drawing.Color.Blue;
+            this.registerLabel.Location = new System.Drawing.Point(173, 365);
+            this.registerLabel.Name = "registerLabel";
+            this.registerLabel.Size = new System.Drawing.Size(105, 35);
+            this.registerLabel.TabIndex = 6;
+            this.registerLabel.Text = "Create acoount";
+            this.registerLabel.Click += new System.EventHandler(this.registerLabel_Click);
             // 
             // signIN
             // 
@@ -80,12 +95,13 @@ namespace WinFormsPractice
             // 
             // passField
             // 
-            this.passField.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passField.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passField.Location = new System.Drawing.Point(90, 238);
             this.passField.Name = "passField";
             this.passField.PasswordChar = '*';
-            this.passField.Size = new System.Drawing.Size(290, 48);
+            this.passField.Size = new System.Drawing.Size(290, 35);
             this.passField.TabIndex = 4;
+            this.passField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passField_KeyDown);
             // 
             // pictureBox2
             // 
@@ -115,7 +131,6 @@ namespace WinFormsPractice
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
@@ -164,7 +179,9 @@ namespace WinFormsPractice
             this.ClientSize = new System.Drawing.Size(401, 409);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
@@ -187,5 +204,6 @@ namespace WinFormsPractice
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox loginField;
         private System.Windows.Forms.Button signIN;
+        private System.Windows.Forms.Label registerLabel;
     }
 }

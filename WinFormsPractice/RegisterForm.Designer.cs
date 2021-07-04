@@ -29,7 +29,9 @@ namespace WinFormsPractice
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.authorisationLabel = new System.Windows.Forms.Label();
             this.register = new System.Windows.Forms.Button();
             this.passField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -47,6 +49,7 @@ namespace WinFormsPractice
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(194)))), ((int)(((byte)(60)))));
+            this.mainPanel.Controls.Add(this.authorisationLabel);
             this.mainPanel.Controls.Add(this.register);
             this.mainPanel.Controls.Add(this.passField);
             this.mainPanel.Controls.Add(this.pictureBox2);
@@ -58,6 +61,18 @@ namespace WinFormsPractice
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(401, 409);
             this.mainPanel.TabIndex = 1;
+            // 
+            // authorisationLabel
+            // 
+            this.authorisationLabel.AutoSize = true;
+            this.authorisationLabel.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.authorisationLabel.ForeColor = System.Drawing.Color.Blue;
+            this.authorisationLabel.Location = new System.Drawing.Point(173, 365);
+            this.authorisationLabel.Name = "authorisationLabel";
+            this.authorisationLabel.Size = new System.Drawing.Size(99, 35);
+            this.authorisationLabel.TabIndex = 7;
+            this.authorisationLabel.Text = "Authorization";
+            this.authorisationLabel.Click += new System.EventHandler(this.authorisationLabel_Click);
             // 
             // register
             // 
@@ -76,15 +91,17 @@ namespace WinFormsPractice
             this.register.TabIndex = 5;
             this.register.Text = "Register";
             this.register.UseVisualStyleBackColor = false;
+            this.register.Click += new System.EventHandler(this.register_Click);
             // 
             // passField
             // 
-            this.passField.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passField.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passField.Location = new System.Drawing.Point(90, 238);
             this.passField.Name = "passField";
             this.passField.PasswordChar = '*';
-            this.passField.Size = new System.Drawing.Size(290, 48);
+            this.passField.Size = new System.Drawing.Size(290, 35);
             this.passField.TabIndex = 4;
+            this.passField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passField_KeyDown);
             // 
             // pictureBox2
             // 
@@ -160,7 +177,9 @@ namespace WinFormsPractice
             this.ClientSize = new System.Drawing.Size(401, 409);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
@@ -183,5 +202,6 @@ namespace WinFormsPractice
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Label topLabel;
+        private System.Windows.Forms.Label authorisationLabel;
     }
 }

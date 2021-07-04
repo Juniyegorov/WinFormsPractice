@@ -13,6 +13,7 @@ namespace WinFormsPractice
 {
     public partial class LoginForm : Form
     {
+        public string _name = string.Empty;
         public LoginForm()
         {
             InitializeComponent();
@@ -22,14 +23,10 @@ namespace WinFormsPractice
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void closeButton_MouseEnter(object sender, EventArgs e)
         {
             closeButton.ForeColor = Color.Gray;
@@ -73,11 +70,31 @@ namespace WinFormsPractice
 
             if(dataTable.Rows.Count > 0)
             {
-                MessageBox.Show("Yes");
+                _name = userLogin;
+                Name = userLogin;
+                this.Hide();
+                MainForm mainForm = new MainForm(_name);
+                mainForm.Show();
             }
             else
             {
-                MessageBox.Show("No");
+                MessageBox.Show("Login or password is incorrect!");
+            }
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+        }
+
+        private void passField_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                signIN_Click(sender, e);
             }
         }
     }
